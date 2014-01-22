@@ -49,9 +49,9 @@ module.exports = function(grunt) {
 	grunt.registerTask("default", ["webpack-dev-server:start"]);
 
 	// Build and watch cycle (another option for development)
-	// Advantage: No server request, can run app from filesystem
+	// Advantage: No server required, can run app from filesystem
 	// Disadvantage: Requests are not blocked until bundle is available,
-	//               can serve old app on refresh
+	//               can serve an old app on too fast refresh
 	grunt.registerTask("dev", ["webpack:build-dev", "watch:app"]);
 
 	// Production build
