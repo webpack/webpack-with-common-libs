@@ -2,8 +2,6 @@ module.exports = function(grunt) {
 	require("matchdep").filterAll("grunt-*").forEach(grunt.loadNpmTasks);
 	var webpack = require("webpack");
 	var webpackConfig = require("./webpack.config.js");
-	var webpackDevConfig = Object.create(webpackConfig);
-	webpackDevConfig.devtool = "eval";
 	grunt.initConfig({
 		webpack: {
 			options: webpackConfig,
@@ -26,7 +24,7 @@ module.exports = function(grunt) {
 		"webpack-dev-server": {
 			options: {
 				webpack: webpackConfig,
-				publicPath: "/" + webpackDevConfig.output.publicPath
+				publicPath: "/" + webpackConfig.output.publicPath
 			},
 			start: {
 				keepAlive: true,
