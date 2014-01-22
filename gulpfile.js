@@ -8,9 +8,9 @@ var webpackConfig = require("./webpack.config.js");
 gulp.task("default", ["webpack-dev-server"], function() {});
 
 // Build and watch cycle (another option for development)
-// Advantage: No server request, can run app from filesystem
+// Advantage: No server required, can run app from filesystem
 // Disadvantage: Requests are not blocked until bundle is available,
-//               can serve old app on refresh
+//               can serve an old app on refresh
 gulp.task("build-dev", ["webpack:build-dev"], function() {
 	gulp.watch(["app/**/*"], function(event) {
 		gulp.run("webpack:build-dev");
