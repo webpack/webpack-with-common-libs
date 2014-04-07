@@ -13,7 +13,7 @@ $ npm install webpack webpack-dev-server grunt-cli
 ### Native
 
 ``` sh
-# Build with procuction config
+# Build with production config
 $ webpack -p --colors
 
 # Build with development config
